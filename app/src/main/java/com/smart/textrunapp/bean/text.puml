@@ -1,0 +1,12 @@
+@startuml
+
+actor alice #red
+alice -> bob : 发起认证请求
+bob --> alice : 响应认证请求
+alice -> bob : 另一发起认证请求
+alice <-- bob : 另一响应认证请求
+alice -> alice : 这是我自己的请求
+alice -> 小明 : 你好
+bob --> 小明 :测试一下更多的
+
+@enduml

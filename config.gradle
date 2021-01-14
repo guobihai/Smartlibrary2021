@@ -1,0 +1,127 @@
+/**  在此处对整个项目的gradle统一进行配置  **/
+ext {
+    // Android开发版本配置
+    android = [
+            compileSdkVersion: 29,// 编译版本 Android 9.0
+            buildToolsVersion: "28.0.3",
+            applicationId    : "com.smart.textrunapp", // 应用ID
+            minSdkVersion    : 19, // 最低兼容 Android 4.4
+            targetSdkVersion : 29, // 目标软件开发版本 Android 9.0
+            versionCode      : 1,// 版本号
+            versionName      : "1.0.0", // 版本名称
+    ]
+
+    // Version配置
+
+    versions = [
+            "support-version"   : "28.0.0", // 官方支持库版本
+            "junit-version"     : "4.12", // 单元测试版本
+            "retrofitSdkVersion": "2.9.0",// retrofit2
+            "recyclerviewVersion": "1.0.0",// retrofit2
+    ]
+    // Support配置
+    support = [
+            "constraint-layout"   : "androidx.constraintlayout:constraintlayout:2.0.1",
+            'appcompat'           : "androidx.appcompat:appcompat:1.2.0",
+            'junit'               : "junit:junit:${versions["junit-version"]}",
+            'multidex'            : "com.android.support:multidex:1.0.3",
+            // Google ACC ViewModel和LiveData
+            "lifecycle-extensions": "androidx.lifecycle:lifecycle-extensions:2.2.0",
+            "lifecycle-viewmodel" : "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0",
+            "viewpager2"          : "androidx.viewpager2:viewpager2:1.1.0-alpha01",
+            "recycleView"         : "androidx.recyclerview:recyclerview:${versions["recyclerviewVersion"]}"
+    ]
+
+    // 第三方依赖库配置
+    dependencies = [
+            // rxjava
+            "rxjava"                       : "io.reactivex.rxjava2:rxjava:2.1.0",
+            "rxandroid"                    : "io.reactivex.rxjava2:rxandroid:2.1.0",
+
+
+            // rx系列与View生命周期同步
+//            "rxlifecycle"     : "com.trello.rxlifecycle2:rxlifecycle:2.2.2",
+//            "rxlifecycle-components" : "com.trello.rxlifecycle2:rxlifecycle-components:2.2.2",
+            // rxbinding
+            "rxbinding"                    : "com.jakewharton.rxbinding2:rxbinding:2.1.1",
+            // rx 6.0权限请求
+            "rxpermissions"                : "com.github.tbruyelle:rxpermissions:0.10.2",
+            // okgo 网络框架 https://github.com/jeasonlzy/okhttp-OkGo
+
+            // glide图片加载 https://github.com/bumptech/glide
+            "glide"                        : "com.github.bumptech.glide:glide:4.9.0",
+            "glide-okhttp3-integration"    : "com.github.bumptech.glide:okhttp3-integration:4.9.0",
+            "glide-compiler"               : "com.github.bumptech.glide:compiler:4.9.0",
+            // 用于生成Generated API
+            "glide-compiler"               : "com.github.bumptech.glide:compiler:4.9.0",
+            // json解析 https://github.com/alibaba/fastjson
+            "fastjson"                     : "com.alibaba:fastjson:1.2.47",
+            // ARouter 路由框架 https://github.com/alibaba/ARouter/blob/master/README_CN.md
+            "arouter-api"                  : "com.alibaba:arouter-api:1.4.1",
+            "arouter-compiler"             : "com.alibaba:arouter-compiler:1.2.2",
+            // 刷新框架 https://github.com/scwang90/SmartRefreshLayout
+            "smartRefreshLayout"           : 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.5.1',
+            // ORM数据库 https://github.com/LitePalFramework/LitePal
+            "litePal"                      : 'org.litepal.android:java:3.0.0',
+            // AndroidAutoSize屏幕适配方案终极版
+            "adaptation"                   : 'me.jessyan:autosize:1.1.2',
+
+            //retrofit libry
+            "retrofit"                     : "com.squareup.retrofit2:retrofit:${versions["retrofitSdkVersion"]}",
+            "retrofit-converter-gson"      : "com.squareup.retrofit2:converter-gson:${versions["retrofitSdkVersion"]}",
+            "retrofit-adapter-rxjava"      : "com.squareup.retrofit2:adapter-rxjava:${versions["retrofitSdkVersion"]}",
+            "retrofit-adapter-rxjava2"     : "com.squareup.retrofit2:adapter-rxjava2:${versions["retrofitSdkVersion"]}",
+            "okhttp3"                      : "com.squareup.okhttp3:okhttp:3.10.0",
+            "okhttp-urlconnection"         : "com.squareup.okhttp:okhttp-urlconnection:2.0.0",
+            "logging-interceptor"          : "com.squareup.okhttp3:logging-interceptor:3.6.0",
+
+            //logger
+            "logger"                       : "com.orhanobut:logger:2.2.0",
+
+            //luban
+            "luban"                        : "top.zibin:Luban:1.1.8",
+
+            // PickerView 滚动选择器 https://github.com/Bigkoo/Android-PickerView
+            "pickerView"                   : "com.contrarywind:Android-PickerView:4.1.7",
+            // BottomNavigationView https://github.com/ittianyu/BottomNavigationViewEx/blob/master/README_ZH.md
+            "bottomNavigationView"         : "com.github.ittianyu:BottomNavigationViewEx:2.0.2",
+            // badgeView
+            "badge"                        : "q.rorbin:badgeview:1.1.0",
+            // adapter
+            "BaseRecyclerViewAdapterHelper": "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46",
+            // google FlexboxLayout (非Android X 只能使用1.0以下版本)https://github.com/google/flexbox-layout
+            "flexBoxLayout"                : "com.google.android:flexbox:1.0.0",
+            // StateButton https://github.com/niniloveyou/StateButton/blob/master/README_CHINESE.md
+            "stateButton"                  : "com.github.niniloveyou:StateButton:v1.0.0",
+            "commons-lang3"                : "org.apache.commons:commons-lang3:3.7",
+            // 二维码 https://github.com/bingoogolapple/BGAQRCode-Android
+            "zxing"                        : "cn.bingoogolapple:bga-qrcode-zxing:1.3.6",
+            "EventBus"                     : "org.greenrobot:eventbus:3.0.0",
+            // BindingCollectionAdapter
+            "bindingCollectionAdapter"     : 'me.tatarka.bindingcollectionadapter2:bindingcollectionadapter:2.2.0',
+            "bindingCollectionAdapter-Rv"  : 'me.tatarka.bindingcollectionadapter2:bindingcollectionadapter-recyclerview:2.2.0',
+            // Lottie动画框架(请勿更新到2.8.0以上的版本，需要支持Android X)
+            "lottie"                       : 'com.airbnb.android:lottie:2.7.0',
+            // gif-drawable(Glide显示GIF效果不理想 https://github.com/koral--/android-gif-drawable)
+            "gif-drawable"                 : 'pl.droidsonroids.gif:android-gif-drawable:1.2.17',
+            //流式布局
+            "flowlayout"                   : 'com.hyman:flowlayout-lib:1.1.2',
+            //banner轮播图
+            "banner"                       : 'com.youth.banner:banner:1.4.10',
+            //分页网格布局PageGridView
+            "PageGridView"                 : 'com.wihaohao:PageGridView:1.2.1',
+            //html解析
+            "jsoup"                        : 'org.jsoup:jsoup:1.11.3',
+            "SwipeCaptcha"                 : 'com.github.mcxtzhang:SwipeCaptcha:V1.0.0',
+            //侧滑删除框架
+            "SwipeRecyclerView"            : 'com.yanzhenjie.recyclerview:support:1.3.2',
+
+            //圆形头像
+            "roundedimageview"             : 'com.makeramen:roundedimageview:2.2.1',
+            "noticeview"                   : 'com.github.czy1121:noticeview:1.1.0'
+
+
+    ]
+}
+
+
