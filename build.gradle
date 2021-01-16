@@ -5,7 +5,7 @@ buildscript {
     repositories {
         google()
         jcenter()
-        maven { url "http://172.16.1.75:8081/repository/maven-public/" }
+        maven { url 'https://jitpack.io' }
     }
     dependencies {
         classpath "com.android.tools.build:gradle:4.0.2"
@@ -20,10 +20,10 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url 'https://jitpack.io' }
         maven {
             url "http://download.flutter.io"
         }
-        maven { url "http://172.16.1.75:8081/repository/maven-public/" }
     }
 }
 
