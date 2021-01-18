@@ -11,9 +11,6 @@ import com.smart.textrunapp.databinding.ActivityMainBinding
 import com.smart.textrunapp.viewmodle.NetCtrlModel
 import com.youth.banner.Banner
 import com.youth.banner.indicator.CircleIndicator
-import io.flutter.app.FlutterActivity
-import io.flutter.app.FlutterFragmentActivity
-import io.flutter.embedding.android.FlutterFragmentActivity.createDefaultIntent
 import permissions.dispatcher.NeedsPermission
 import permissions.dispatcher.OnPermissionDenied
 import permissions.dispatcher.RuntimePermissions
@@ -79,7 +76,7 @@ class MainActivity : BaseViewBindingActivity<ActivityMainBinding, NetCtrlModel>(
     override fun initView() {
         mViewBinding.textSdcard.setOnClickListener {
 //            mViewModel.data.value = "jelemt"
-            startActivity(Intent(this, FlutterTextActivity::class.java))
+            startActivity(Intent(this, SetGrayActivity::class.java))
         }
 
         mViewModel.data.observe(this, object : Observer<String> {
