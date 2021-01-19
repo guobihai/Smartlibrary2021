@@ -7,6 +7,15 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
+
+    <!--相机权限-->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!--读文件权限-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+
     <application
         android:name=".app.SmartApplication"
         android:allowBackup="true"
@@ -15,7 +24,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SetGrayActivity"></activity>
+        <activity android:name=".qrcode.ScanQrcodeActivity"></activity>
+        <activity android:name=".SetGrayActivity" />
         <activity android:name=".FlutterTextActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -53,7 +63,7 @@
 
         <meta-data
             android:name="flutterEmbedding"
-            android:value="2"></meta-data>
+            android:value="2" />
 
         <activity
             android:name=".FlutterFragmentPageActivity"
@@ -65,6 +75,7 @@
                 android:name="io.flutter.embedding.android.SplashScreenDrawable"
                 android:resource="@drawable/launch_background" />
         </activity>
+        <activity android:name=".qrcode.ImageActivity" />
     </application>
 
 </manifest>

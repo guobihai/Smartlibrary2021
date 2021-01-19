@@ -92,4 +92,7 @@ dependencies {
 
     // SmartRefreshLayout 上拉下拉刷新
     api rootProject.ext.dependencies["smartRefreshLayout"]
+
+    //二维码
+    api "com.google.zxing:core:3.3.1"
 }

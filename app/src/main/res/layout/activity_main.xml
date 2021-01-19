@@ -22,15 +22,34 @@
 
     <TextView
         android:id="@+id/textSdcard"
-        android:layout_width="300dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Flutter 测试用例"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/banner" />
+
+    <TextView
+        android:id="@+id/textQrcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:text="Qrcode"
+        app:layout_constraintLeft_toRightOf="@+id/textSdcard"
         app:layout_constraintTop_toBottomOf="@+id/banner" />
 
 
+
+    <TextView
+        android:id="@+id/textScanQrcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:text="扫码测试"
+        app:layout_constraintLeft_toRightOf="@+id/textQrcode"
+        app:layout_constraintTop_toBottomOf="@+id/banner" />
     <FrameLayout
         android:id="@+id/contentLayout"
         android:layout_width="match_parent"

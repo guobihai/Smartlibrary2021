@@ -3,8 +3,8 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'android-aspectjx'
-
-
+//华为扫码
+apply plugin: 'com.huawei.agconnect'
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     buildToolsVersion rootProject.ext.android.buildToolsVersion
@@ -98,4 +98,8 @@ dependencies {
 //    implementation 'io.flutter:flutter_embedding_release:1.0.0-ae90085a8437c0ae94d6b5ad2741739ebc742cb4'
     implementation 'io.flutter:armeabi_v7a_release:1.0.0-ae90085a8437c0ae94d6b5ad2741739ebc742cb4'
     implementation 'com.github.guobihai:gcard-flutterboost:1.0.0'
+
+    //华为扫码
+    implementation 'com.huawei.hms:scan:1.3.0.300'
+
 }

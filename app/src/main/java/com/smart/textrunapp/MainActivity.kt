@@ -8,6 +8,8 @@ import com.smart.library.base.BaseViewBindingActivity
 import com.smart.textrunapp.adabpter.ImageNetAdapter
 import com.smart.textrunapp.bean.DataBean
 import com.smart.textrunapp.databinding.ActivityMainBinding
+import com.smart.textrunapp.qrcode.ImageActivity
+import com.smart.textrunapp.qrcode.ScanQrcodeActivity
 import com.smart.textrunapp.viewmodle.NetCtrlModel
 import com.youth.banner.Banner
 import com.youth.banner.indicator.CircleIndicator
@@ -54,7 +56,8 @@ class MainActivity : BaseViewBindingActivity<ActivityMainBinding, NetCtrlModel>(
 
     @OnPermissionDenied(
         Manifest.permission.READ_EXTERNAL_STORAGE,
-        Manifest.permission.WRITE_EXTERNAL_STORAGE
+        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+        Manifest.permission.CAMERA
     )
     fun reject() {
 
@@ -77,6 +80,14 @@ class MainActivity : BaseViewBindingActivity<ActivityMainBinding, NetCtrlModel>(
         mViewBinding.textSdcard.setOnClickListener {
 //            mViewModel.data.value = "jelemt"
             startActivity(Intent(this, SetGrayActivity::class.java))
+        }
+
+        mViewBinding.textQrcode.setOnClickListener {
+            startActivity(Intent(this, ImageActivity::class.java))
+        }
+
+        mViewBinding.textScanQrcode.setOnClickListener {
+            startActivity(Intent(this, ScanQrcodeActivity::class.java))
         }
 
         mViewModel.data.observe(this, object : Observer<String> {

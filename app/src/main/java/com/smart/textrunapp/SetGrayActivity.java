@@ -42,6 +42,7 @@ public class SetGrayActivity extends AppCompatActivity {
                0, 0, 0, 1, 0};
         View view = this.getWindow().getDecorView();
         ColorMatrix cm = new ColorMatrix();
+        //设置饱和度
         cm.setSaturation(0);
         cm.set(array);
         paint.setColorFilter(new ColorMatrixColorFilter(cm));
