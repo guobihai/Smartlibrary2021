@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import com.smart.library.base.BaseViewBindingActivity
+import com.smart.library.network.utils.RxUtils
 import com.smart.textrunapp.adabpter.ImageNetAdapter
 import com.smart.textrunapp.bean.DataBean
 import com.smart.textrunapp.databinding.ActivityMainBinding
@@ -13,19 +14,19 @@ import com.smart.textrunapp.qrcode.ScanQrcodeActivity
 import com.smart.textrunapp.viewmodle.NetCtrlModel
 import com.youth.banner.Banner
 import com.youth.banner.indicator.CircleIndicator
+import io.reactivex.Observable
+import io.reactivex.Scheduler
 import permissions.dispatcher.NeedsPermission
 import permissions.dispatcher.OnPermissionDenied
 import permissions.dispatcher.RuntimePermissions
+import java.util.*
 
 @RuntimePermissions
 class MainActivity : BaseViewBindingActivity<ActivityMainBinding, NetCtrlModel>() {
 
-    var i: Int = 3
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        i = 6
     }
 
     //播放
@@ -52,6 +53,7 @@ class MainActivity : BaseViewBindingActivity<ActivityMainBinding, NetCtrlModel>(
     )
     fun requireSdCard() {
         System.out.println("==============")
+
     }
 
     @OnPermissionDenied(
@@ -113,5 +115,9 @@ class MainActivity : BaseViewBindingActivity<ActivityMainBinding, NetCtrlModel>(
         TODO("Not yet implemented")
     }
 
+    fun loadData(){
+
+
+    }
 
 }

@@ -36,9 +36,9 @@ public class SetGrayActivity extends AppCompatActivity {
      */
     void setGray() {
        float[] array ={
-               -1, 0, 0, 0, 255,
-               0, -1, 0, 0, 255,
-               0, 0, -1, 0, 255,
+               0.33f, 0.59f, 0.11f, 0, 0,
+               0.33f, 0.59f, 0.11f, 0, 0,
+               0.33f, 0,.59f, 0.11f, 0,
                0, 0, 0, 1, 0};
         View view = this.getWindow().getDecorView();
         ColorMatrix cm = new ColorMatrix();

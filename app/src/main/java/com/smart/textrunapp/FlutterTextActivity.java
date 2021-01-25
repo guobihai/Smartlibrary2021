@@ -6,12 +6,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.smart.library.network.utils.RxLifecycleUtils;
+import com.smart.library.network.utils.RxUtils;
 import com.smart.textrunapp.annotation.ClickLimit;
 import com.smart.textrunapp.flutter.PageRouter;
 import com.smart.textrunapp.flutter.SmtFlutterActivity;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.Scheduler;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 
 public class FlutterTextActivity extends AppCompatActivity {
 
@@ -64,5 +72,17 @@ public class FlutterTextActivity extends AppCompatActivity {
 //            PageRouter.openPageByUrl(this, "home" , params);
             startActivity(new Intent(this, FlutterFragmentPageActivity.class));
         });
+
+        Observable.create(emitter -> {
+            emitter.onNext("xxxx");
+        })
+                .observeOn(AndroidSchedulers.mainThread())
+                .compose(RxUtils.getWrapper())
+                .subscribeOn(Schedulers.newThread())
+                .as(RxLifecycleUtils.bindLifecycle(this))
+                .subscribe(str -> {
+
+                });
+
     }
 }

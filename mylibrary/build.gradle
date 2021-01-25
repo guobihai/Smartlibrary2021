@@ -70,6 +70,9 @@ dependencies {
 
     // RxJava
     api rootProject.ext.dependencies["rxjava"]
+    api 'com.uber.autodispose:autodispose:1.4.0'
+    api 'com.uber.autodispose:autodispose-android-archcomponents:1.4.0'
+
 
     // RxAndroid
     api rootProject.ext.dependencies["rxandroid"]
