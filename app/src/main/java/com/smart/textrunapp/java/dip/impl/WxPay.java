@@ -2,6 +2,7 @@ package com.smart.textrunapp.java.dip.impl;
 
 import com.smart.textrunapp.java.dip.interfaces.IPay;
 
+// 细节实现
 public class WxPay implements IPay {
 
     private int money;

@@ -50,6 +50,16 @@
         android:text="扫码测试"
         app:layout_constraintLeft_toRightOf="@+id/textQrcode"
         app:layout_constraintTop_toBottomOf="@+id/banner" />
+    <TextView
+        android:id="@+id/textLaunch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:text="携程加载API"
+        app:layout_constraintLeft_toRightOf="@+id/textScanQrcode"
+        app:layout_constraintTop_toBottomOf="@+id/banner" />
+
     <FrameLayout
         android:id="@+id/contentLayout"
         android:layout_width="match_parent"

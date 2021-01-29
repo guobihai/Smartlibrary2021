@@ -22,7 +22,7 @@ public class SmartApplication extends Application {
     public void onCreate() {
         super.onCreate();
         new AppContext(this);
-        RetrofitManager.getInstance().init(BuildConfig.BASE_HOST);
+        RetrofitManager.getInstance().init("https://wanandroid.com/");
 
         /**
          * 初始化闲鱼-flutter 引擎

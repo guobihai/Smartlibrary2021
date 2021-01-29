@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.os.BatteryManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Choreographer;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -42,7 +43,14 @@ public class SmtFlutterActivity extends BoostFlutterActivity {
             window.getDecorView().setSystemUiVisibility(PlatformPlugin.DEFAULT_SYSTEM_UI);
         }
         super.onCreate(savedInstanceState);
-        System.out.println("============SmtFlutterActivity=============");
+        long startTime = System.currentTimeMillis();
+        System.out.println("============SmtFlutterActivity============="+startTime);
+        Choreographer.getInstance().postFrameCallback(new Choreographer.FrameCallback() {
+            @Override
+            public void doFrame(long frameTimeNanos) {
+                System.out.println("=====frameTimeNanos======" + frameTimeNanos);
+            }
+        });
     }
 
     @NonNull

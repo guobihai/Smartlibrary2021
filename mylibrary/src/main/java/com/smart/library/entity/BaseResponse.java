@@ -2,14 +2,10 @@ package com.smart.library.entity;
 
 
 /**
- * 杨桃技术部，API基础封装
- * @Author anhui
- * @Created 3/29/19
- * @Editor zrh
- * @Edited 3/29/19
- * @Type
- * @Layout
- * @Api
+ * @author guobihai
+ * 创建日期：2021/1/29
+ * desc：
+ *
  */
 public class BaseResponse<T> {
 

@@ -14,4 +14,6 @@ public class PayMonet implements PayModel {
     public void payMoney(IPay iPay) {
         iPay.pay();
     }
+
+
 }

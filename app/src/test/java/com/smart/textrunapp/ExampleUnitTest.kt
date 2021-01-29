@@ -3,10 +3,8 @@ package com.smart.textrunapp
 
 import com.smart.textrunapp.java.annotation.BankService
 import com.smart.textrunapp.java.build.CarBuilder
-import com.smart.textrunapp.java.dip.impl.BankPay
-import com.smart.textrunapp.java.dip.impl.PayMonet
-import com.smart.textrunapp.java.dip.impl.WxPay
-import com.smart.textrunapp.java.dip.impl.ZfbPay
+import com.smart.textrunapp.java.dip.impl.*
+import com.smart.textrunapp.java.dip.interfaces.PayModel
 import com.smart.textrunapp.java.factory.BuildBMW
 import com.smart.textrunapp.java.thread.ThCallable
 import com.smart.textrunapp.java.thread.ThreadDemo1
@@ -34,7 +32,8 @@ class ExampleUnitTest {
 
     @Test
     fun textDIP() {
-        val pay = PayMonet()
+        val pay:PayModel = TextPay()
+
         pay.payMoney(WxPay(100))
         pay.payMoney(ZfbPay(30))
         pay.payMoney(BankPay(60))

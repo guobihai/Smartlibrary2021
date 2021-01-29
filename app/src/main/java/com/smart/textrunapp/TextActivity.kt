@@ -5,6 +5,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.smart.library.entity.BaseResponse
 import com.smart.library.network.RetrofitManager
+import com.smart.library.network.utils.RxLifecycleUtils
 import com.smart.library.network.utils.RxUtils
 import com.smart.library.observer.MyMaybeObserver
 import com.smart.library.observer.ResponseObserver
@@ -51,6 +52,7 @@ class TextActivity : AppCompatActivity() {
     fun textLoad() {
         RetrofitManager.create(CenterApi::class.java).logOut(HashMap<Any?, Any?>())
             .compose(RxUtils.getWrapper())
+            .`as`(RxLifecycleUtils.bindLifecycle(this))
             .subscribe(object : ResponseObserver<BaseResponse<Boolean?>?>() {
                 override fun onSuccess(data: BaseResponse<Boolean?>?) {
                     TODO("Not yet implemented")
@@ -60,6 +62,7 @@ class TextActivity : AppCompatActivity() {
 
     fun textCallable() {
         Maybe.fromCallable(ThCallable()).compose(RxUtils.getWrapper())
+            .`as`(RxLifecycleUtils.bindLifecycle(this))
             .subscribe(object : MyMaybeObserver<String?>() {
                 override fun onResultSuccess(t: String?) {
                     TODO("Not yet implemented")

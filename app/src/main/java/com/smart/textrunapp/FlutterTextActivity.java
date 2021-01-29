@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Choreographer;
 import android.view.View;
 
 import com.smart.library.network.utils.RxLifecycleUtils;
@@ -71,18 +72,29 @@ public class FlutterTextActivity extends AppCompatActivity {
 //            params.put("test2","v_test2");
 //            PageRouter.openPageByUrl(this, "home" , params);
             startActivity(new Intent(this, FlutterFragmentPageActivity.class));
+
+
         });
 
+//        loadByRxjava();
+        Choreographer.getInstance().postFrameCallback(new Choreographer.FrameCallback() {
+            @Override
+            public void doFrame(long frameTimeNanos) {
+                System.out.println("=====frameTimeNanos======"+frameTimeNanos);
+            }
+        });
+    }
+
+    private void loadByRxjava() {
         Observable.create(emitter -> {
             emitter.onNext("xxxx");
         })
                 .observeOn(AndroidSchedulers.mainThread())
                 .compose(RxUtils.getWrapper())
-                .subscribeOn(Schedulers.newThread())
+                .subscribeOn(Schedulers.io())
                 .as(RxLifecycleUtils.bindLifecycle(this))
                 .subscribe(str -> {
 
                 });
-
     }
 }
