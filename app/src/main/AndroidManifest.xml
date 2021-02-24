@@ -76,6 +76,9 @@
                 android:resource="@drawable/launch_background" />
         </activity>
         <activity android:name=".qrcode.ImageActivity" />
+
+        <activity android:name=".camara2.MainCamaraActivity"/>
+        <activity android:name=".camara2.widget.SoulActivity"/>
     </application>
 
 </manifest>

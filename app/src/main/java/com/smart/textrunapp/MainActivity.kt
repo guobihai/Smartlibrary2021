@@ -10,6 +10,7 @@ import com.smart.library.network.RetrofitManager
 import com.smart.library.network.converter.GsonConverterFactory
 import com.smart.textrunapp.adabpter.ImageNetAdapter
 import com.smart.textrunapp.bean.DataBean
+import com.smart.textrunapp.camara2.MainCamaraActivity
 import com.smart.textrunapp.databinding.ActivityMainBinding
 import com.smart.textrunapp.launch.ApiService
 import com.smart.textrunapp.launch.bean.BaseRusult
@@ -89,7 +90,8 @@ class MainActivity : BaseViewBindingActivity<ActivityMainBinding, NetCtrlModel>(
         }
 
         mViewBinding.textQrcode.setOnClickListener {
-            startActivity(Intent(this, ImageActivity::class.java))
+            startActivity(Intent(this, MainCamaraActivity::class.java))
+//            startActivity(Intent(this, ImageActivity::class.java))
 
         }
 
