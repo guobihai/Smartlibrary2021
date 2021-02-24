@@ -58,6 +58,38 @@ android {
 //        exclude 'com.taobao'
         exclude 'versions.9'
     }
+
+    //设定编译后APK命名规则
+    android.applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def projectName = "Smart"
+            def buildType = variant.buildType.name
+            output.outputFileName = "${projectName}_${variant.versionName}_${variant.versionCode}_${buildType}.apk"
+        }
+
+        //打包时，移除相芯没有用上的bundle
+        variant.mergeAssetsProvider.configure {
+            doLast {
+                delete(fileTree(dir: outputDir, includes: ['model/ai_face_processor.bundle',
+                                                           'model/ai_gesture.bundle']))
+            }
+        }
+    }
+//签名配置
+    signingConfigs {
+        release {
+            storeFile file('../appkeystore.jks')
+            keyAlias 'SmtApp'
+            keyPassword '123456'
+            storePassword '123456'
+        }
+        debug {
+            storeFile file('../appkeystore.jks')
+            keyAlias 'SmtApp'
+            keyPassword '123456'
+            storePassword '123456'
+        }
+    }
 }
 
 
