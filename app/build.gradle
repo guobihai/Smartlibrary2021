@@ -47,7 +47,11 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
+    android {
+        lintOptions {
+            abortOnError false
+        }
+    }
     repositories {
         flatDir {
             dirs 'libs'   // aar目录
