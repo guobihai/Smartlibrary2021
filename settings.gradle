@@ -1,4 +1,4 @@
-//include ':aliflutterboost'
+include ':aliflutterboost'
 include ':mylibrary'
 include ':app'
 rootProject.name = "TextRunApp"
